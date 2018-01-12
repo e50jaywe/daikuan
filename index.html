@@ -165,7 +165,7 @@
     </ol>
     <div class="carousel-inner">
         <div class="item active">
-            <img src="images/banner/banner_1.jpg" alt="1 slide" style="height:100%;">
+            <img src="images/banner/banner_1.jpg" alt="1 slide" style="height:100%;" id="banner_1">
 <!-- 
             <div class="container">
                 <div class="carousel-caption">
@@ -192,7 +192,7 @@
         </div>
         <div class="item">
             <div style="background:#fff;">
-                    <img src="images/banner/banner_3.jpg" alt="3 slide" style="height:500px;width:auto;">
+                    <img src="images/banner/banner_3.jpg" alt="3 slide" style="height:500px;width:auto;" id="banner_3">  
             </div>
        
             <div class="container">
@@ -258,7 +258,7 @@
     </ul>
 
     <div class="tab-content">
-        <div class="tab-pane active" id="tab-chrome">
+        <div class="tab-pane active" id="tab-chrome" style="padding:10px;">
             <div class="row feature">
                 <div class="col-md-7">
 
@@ -377,6 +377,10 @@
 <script src="js/bootstrap.min.js"></script>
 <script>
     $(function () {
+        if($(window).innerWidth() < 768){
+            $('#banner_1').attr('src','images/banner/banner_11.jpg')
+            $('#banner_3').attr('src','images/banner/banner_33.jpg').css('height','100%');
+        }
         $('#ad-carousel').carousel();
         $('#menu-nav .navbar-collapse a').click(function (e) {
             var href = $(this).attr('href');
